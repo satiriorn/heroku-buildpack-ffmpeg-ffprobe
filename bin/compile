@@ -2,12 +2,16 @@
 
 echo "-----> Install ffmpeg and ffprobe"
 BUILD_DIR=$1
-DOWNLOAD_URL="https://baller-ffmpeg.s3.amazonaws.com/ffmpeg-git-amd64-static.tar.xz"
+DOWNLOAD_URL="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linuxarm64-gpl.tar.xz"
 
 cd $BUILD_DIR
 mkdir -p "vendor"
 cd "vendor"
 curl -L --silent $DOWNLOAD_URL | tar xJ --strip-components=1
+
+PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor"' >> $PROFILE_PATH
 
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffprobe.sh"
 mkdir -p $(dirname $PROFILE_PATH)
