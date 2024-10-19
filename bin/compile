@@ -2,7 +2,7 @@
 
 echo "-----> Install ffmpeg and ffprobe"
 BUILD_DIR=$1
-DOWNLOAD_URL="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linuxarm64-gpl.tar.xz"
+DOWNLOAD_URL="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz"
 
 cd $BUILD_DIR
 mkdir -p "vendor"
